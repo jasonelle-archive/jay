@@ -1,0 +1,9 @@
+{
+    "presets": [
+        ["@babel/env", {"loose":true}]
+    ],
+    "plugins": [
+        ["@babel/plugin-proposal-function-bind"],
+        ["@babel/transform-react-jsx", { "pragma": "h" }]
+    ]
+}
