@@ -1,6 +1,7 @@
+import {h} from 'preact';
+import render from 'preact-render-to-json';
+
 import Jason from './Jason';
 import Head from './Head';
 
-export {Jason, Head};
-
-export default Jason;
+export {h, render, Jason, Head};

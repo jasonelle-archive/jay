@@ -1,6 +1,4 @@
-import {h} from 'preact';
-import render from 'preact-render-to-json';
-import {Jason, Head} from '../jason';
+import {h, render, Jason, Head} from '../jason';
 
 const Root = () => (
     <Jason>
