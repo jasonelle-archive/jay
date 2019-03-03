@@ -1,8 +1,8 @@
 import {h, render, Jason} from '../jason';
 
-const Root = () => (
+const Main = () => (
     <Jason/>
 );
 
-const output = render(<Root/>);
+const output = render(<Main/>);
 export default output;

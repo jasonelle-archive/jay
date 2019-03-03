@@ -1,7 +1,7 @@
 var path = require('path');
 var webpack = require('webpack');
 module.exports = {
-    entry: './src/index.js',
+    entry: './index.js',
     target: 'node',
     output: {
         path: path.resolve(__dirname, 'build'),
@@ -31,7 +31,20 @@ module.exports = {
         extensions: ['*', '.js', '.jsx']
     },
     stats: {
-        colors: true
+        colors: true,
+        hash: false,
+        version: false,
+        timings: false,
+        assets: false,
+        chunks: false,
+        modules: false,
+        reasons: false,
+        children: false,
+        source: false,
+        errors: false,
+        errorDetails: false,
+        warnings: false,
+        publicPath: false
     },
     devtool: 'source-map'
 };

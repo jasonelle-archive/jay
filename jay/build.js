@@ -1,5 +1,6 @@
 import fs from 'fs-extra';
 import path from 'path';
+import colors from 'colors';
 import transform from './transform';
 
 const build = (items, directory = null) => {
@@ -34,7 +35,7 @@ const build = (items, directory = null) => {
                     return console.error(err);
                 }
 
-                console.log(`Created File ${file}`);
+                console.log(`Created File ${colors.green(file)}`);
             });
         });
     });

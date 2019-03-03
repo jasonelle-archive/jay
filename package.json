@@ -4,15 +4,16 @@
     "jay": "npm run webpack && node ./build/app.bundle.js"
   },
   "dependencies": {
-    "fs-extra": "^7.0.1",
-    "v8n": "^1.2.3",
     "@babel/core": "^7.3.4",
     "@babel/plugin-proposal-function-bind": "^7.2.0",
     "@babel/plugin-transform-react-jsx": "^7.3.0",
     "@babel/preset-env": "^7.3.4",
     "babel-loader": "^8.0.5",
+    "colors": "^1.3.3",
+    "fs-extra": "^7.0.1",
     "preact": "^8.4.2",
     "preact-render-to-json": "^3.6.6",
+    "v8n": "^1.2.3",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.2.3"
   }
