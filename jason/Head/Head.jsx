@@ -29,8 +29,7 @@ const Head = ({title, description, icon, offline, children}) => {
         props = {...props, offline:"true"};
     }
 
-    if(children)
-    {
+    if(children) {
         const validChildren = ['styles', 'actions', 'templates', 'data', 'agents'];
 
         validations.children.are.valid(children, validChildren, context);

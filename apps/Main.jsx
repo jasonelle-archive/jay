@@ -1,4 +1,4 @@
-import {h, render, Jason} from '../jason';
+import {h, render, Jason} from 'jason';
 
 const Main = () => (
     <Jason/>

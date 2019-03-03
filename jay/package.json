@@ -1,0 +1,14 @@
+{
+    "name": "jasonelle-jay",
+    "version": "1.0.0",
+    "description": "Transpile JSX to Jasonette JSON",
+    "main": "index.js",
+    "author": "Jasonelle Team",
+    "license": "MPL 2.0",
+    "dependencies": {
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/jasonelle/jay.git"
+    }
+}

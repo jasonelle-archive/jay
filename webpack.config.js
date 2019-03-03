@@ -11,7 +11,8 @@ module.exports = {
         rules: [
             {
                 test: /\.(js|jsx)$/,
-                exclude: /(node_modules|bower_components)/,
+                // exclude node_modules except for jason and jay local modules
+                exclude:  /node_modules\/(?!(jason|jay)\/).*/,
                 use: {
                     loader: 'babel-loader',
                     query: {

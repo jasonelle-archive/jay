@@ -1,0 +1,14 @@
+{
+    "name": "jasonelle-jason-jsx",
+    "version": "1.0.0",
+    "description": "Jasonette JSON Components for JSX",
+    "main": "index.js",
+    "author": "Jasonelle Team",
+    "license": "MPL 2.0",
+    "dependencies": {
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/jasonelle/jay.git"
+    }
+}

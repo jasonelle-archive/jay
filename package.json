@@ -4,6 +4,8 @@
     "jay": "npm run webpack && node ./build/app.bundle.js"
   },
   "dependencies": {
+    "jason": "./jason",
+    "jay": "./jay",
     "@babel/core": "^7.3.4",
     "@babel/plugin-proposal-function-bind": "^7.2.0",
     "@babel/plugin-transform-react-jsx": "^7.3.0",

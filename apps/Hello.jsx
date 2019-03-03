@@ -1,4 +1,4 @@
-import {h, render, Jason, Head, Styles, Style} from '../jason';
+import {h, render, Jason, Head, Styles, Style} from 'jason';
 
 const myStyle = 'my_style';
 

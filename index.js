@@ -1,7 +1,7 @@
 /**
  * This is the file that will render all the jsons
  */
-import Jay from './jay';
+import Jay from 'jay';
 
 import Main from './apps/Main';
 import Hello from './apps/Hello';
