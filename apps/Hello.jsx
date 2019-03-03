@@ -8,7 +8,6 @@ const Hello = () => (
       <Styles>
         <Style className={myStyle} font="Verdana" />
       </Styles>
-      <a />
     </Head>
   </Jason>
 );
