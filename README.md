@@ -11,9 +11,9 @@ Convert *JSX* code
 
 <Jason>
     <Head title="My App" description="Hello" icon="file://icon.png">
-        <HeadStyles>
+        <Styles>
             <Style className="my_style" font="Verdana"/>
-        </HeadStyles>
+        </Styles>
     </Head>
 </Jason>
 
