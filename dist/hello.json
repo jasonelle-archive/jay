@@ -1,1 +1,1 @@
-{"$jason":{"head":{"icon":"file://icon.png","description":"Hello","title":"My App"}}}
+{"$jason":{"head":{"icon":"file://icon.png","description":"Hello","title":"My App","styles":{"my_style":{"font":"Verdana"}}}}}

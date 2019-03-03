@@ -2,6 +2,8 @@ import {h} from 'preact';
 import render from 'preact-render-to-json';
 
 import Jason from './Jason';
-import Head from './Head';
+import {Head, Styles as HeadStyles} from './Head';
 
-export {h, render, Jason, Head};
+import Style from './Style';
+
+export {h, render, Jason, Head, HeadStyles, Style};
