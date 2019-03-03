@@ -1,1 +1,1 @@
-{"type":"jason","children":[{"type":"head","props":{"icon":"file://icon.png","description":"Hello","title":"My App"}}]}
+{"$jason":{"head":{"icon":"file://icon.png","description":"Hello","title":"My App"}}}

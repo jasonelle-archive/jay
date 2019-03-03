@@ -1,4 +1,4 @@
-import fs from 'fs';
+import fs from 'fs-extra';
 import path from 'path';
 import transform from './transform';
 
@@ -8,9 +8,11 @@ const build = (items, directory = null) => {
         directory = path.normalize('./dist');
     }
 
-    if (!fs.existsSync(directory)) {
-        fs.mkdirSync(directory);
+    if (fs.existsSync(directory)) {
+        fs.removeSync(directory);
     }
+
+    fs.mkdirSync(directory);
 
     Object.keys(items).forEach(key => {
         
