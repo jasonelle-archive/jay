@@ -12,5 +12,7 @@ const Hello = () => (
     </Jason>
 );
 
+// It's important to return the rendered component
+// in order to transform the result to json
 const output = render(<Hello/>);
 export default output;

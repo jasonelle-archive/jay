@@ -72,6 +72,8 @@ You need [NodeJS](https://nodejs.org/en/) installed in your system.
 
 - Create your Apps in `apps/`
 - Go to `index.js` and import your Apps
+- $ `npm run jay`
+- Profit.
 
 ### Example 
 
