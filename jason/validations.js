@@ -1,27 +1,43 @@
 import v8n from 'v8n';
 import url from 'url';
+import helpers from './helpers';
 
-const header = 'Validation Error:';
+const throwError = (message, context = '') => {
+    throw {message:`Validation Error: ${message}`, context};
+};
 
-const arrayContains = (value, items) => {
+const childsAreValid = (children, validChildren, context = '') => {
+    const names = [];
+    children.forEach(child => {
+        names.push(helpers.get.child.name(child));
+    });
+
+    names.forEach(name => {
+        if(!validChildren.includes(name)) {
+            throwError(`"${name}" is not valid as child.`, context);
+        }
+    });
+};
+
+const arrayContains = (value, items, context = '') => {
     if(!items.includes(value)) {
-        throw `${header} ${value} not in ${JSON.stringify(items)}`;
+        throwError(`"${value}" not in ${JSON.stringify(items)}`, context);
     }
 };
 
-const stringIsNotEmpty = (string) => {
+const stringIsNotEmpty = (string, context = '') => {
     try {
         v8n().string().not.empty().check(string);
     } catch(err) {
-        throw `${header} ${string} is not a valid non empty string.`;
+        throwError(`${string} is not a valid non empty string.`, context);
     }
 };
 
-const stringIsUrl = (string) => {
+const stringIsUrl = (string, context = '') => {
     try {
         const Url = new URL(string);
     } catch(err) {
-        throw `${header} ${string} is not a valid url.`;
+        throwError(`${string} is not a valid url.`, context);
     }
 };
 
@@ -32,6 +48,11 @@ const validations = {
         },
         is : {
             url : stringIsUrl
+        }
+    },
+    children: {
+        are: {
+            valid: childsAreValid
         }
     },
     array: {
