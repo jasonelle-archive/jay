@@ -3,8 +3,8 @@
  */
 import Jay from './jay';
 
-import Main from './src/app/Main';
-import Hello from './src/app/Hello';
+import Main from './apps/Main';
+import Hello from './apps/Hello';
 
 // This is the main object that will render all the jsons
 // format:
