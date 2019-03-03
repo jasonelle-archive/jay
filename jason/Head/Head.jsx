@@ -1,41 +1,41 @@
-import {h} from 'preact';
+import { h } from 'preact';
 import validations from '../validations';
 
-const Head = ({title, description, icon, offline, children}) => {
-    const context = '$jason.head';
-    let props = {};
-    let value = null;
-    
-    if(title) {
-        value = title.toString();
-        validations.string.not.empty(value, context);
-        props = {title:value};
-    }
+const Head = ({ title, description, icon, offline, children }) => {
+  const context = '$jason.head';
+  let props = {};
+  let value = null;
 
-    if(description) {
-        value = description.toString();
-        validations.string.not.empty(value, context);
-        props = {description:value, ...props};
-    }
+  if (title) {
+    value = title.toString();
+    validations.string.not.empty(value, context);
+    props = { title: value };
+  }
 
-    if(icon) {
-        value = icon.toString();
-        validations.string.not.empty(value, context);
-        validations.string.is.url(value, context);
-        props = {icon:value, ...props};
-    }
+  if (description) {
+    value = description.toString();
+    validations.string.not.empty(value, context);
+    props = { description: value, ...props };
+  }
 
-    if(offline) {
-        props = {...props, offline:"true"};
-    }
+  if (icon) {
+    value = icon.toString();
+    validations.string.not.empty(value, context);
+    validations.string.is.url(value, context);
+    props = { icon: value, ...props };
+  }
 
-    if(children) {
-        const validChildren = ['styles', 'actions', 'templates', 'data', 'agents'];
+  if (offline) {
+    props = { ...props, offline: 'true' };
+  }
 
-        validations.children.are.valid(children, validChildren, context);
-    }
+  if (children) {
+    const validChildren = ['styles', 'actions', 'templates', 'data', 'agents'];
 
-    return <head {...props}>{children}</head>
+    validations.children.are.valid(children, validChildren, context);
+  }
+
+  return <head {...props}>{children}</head>;
 };
 
 export default Head;

@@ -1,0 +1,13 @@
+{
+  "eslint.packageManager": "yarn",
+  "prettier.jsxSingleQuote": true,
+  "prettier.singleQuote": true,
+  "files.autoSave": "onFocusChange",
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "eslint.autoFixOnSave": true,
+  "editor.fontSize": 16,
+  "editor.tabSize": 2,
+  "editor.renderWhitespace": "boundary",
+  "editor.lineHeight": 30
+}

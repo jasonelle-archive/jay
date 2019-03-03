@@ -1,8 +1,6 @@
-import {h, render, Jason} from 'jason';
+import { h, render, Jason } from 'jason';
 
-const Main = () => (
-    <Jason/>
-);
+const Main = () => <Jason />;
 
-const output = render(<Main/>);
+const output = render(<Main />);
 export default output;

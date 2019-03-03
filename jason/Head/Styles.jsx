@@ -1,7 +1,5 @@
-import {h} from 'preact';
+import { h } from 'preact';
 
-const Styles = ({children}) => (
-    <styles>{children}</styles>
-);
+const Styles = ({ children }) => <styles>{children}</styles>;
 
 export default Styles;
