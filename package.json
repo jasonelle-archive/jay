@@ -6,8 +6,16 @@
     "jay": "npm run build && node ./build/app.bundle.js"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,json,css,md}": [
+    "apps/**/*.{js,jsx,json,css,md}": [
       "eslint --fix apps",
+      "git add"
+    ],
+    "jason/**/*.{js,jsx,json,css,md}": [
+      "eslint --fix jason",
+      "git add"
+    ],
+    "jay/**/*.{js,jsx,json,css,md}": [
+      "eslint --fix jay",
       "git add"
     ]
   },
