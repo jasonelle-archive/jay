@@ -1,44 +1,44 @@
-import fs from 'fs-extra';
-import path from 'path';
-import colors from 'colors';
-import transform from './transform';
+/* eslint-disable no-console */
+import fs from "fs-extra";
+import path from "path";
+import colors from "colors";
+import transform from "./transform";
 
-const build = (items, directory = null) => {
-    
-    if(!directory) {
-        directory = path.normalize('./dist');
-    }
+const build = (items, dir = null) => {
+  let directory = dir;
 
-    if (fs.existsSync(directory)) {
-        fs.removeSync(directory);
-    }
+  if (!directory) {
+    directory = path.normalize("./dist");
+  }
 
-    fs.mkdirSync(directory);
+  if (fs.existsSync(directory)) {
+    fs.removeSync(directory);
+  }
 
-    Object.keys(items).forEach(key => {
-        
-        const item = items[key];
-        const jason = transform(item);
-        const json = JSON.stringify(jason);
-        
-        const name = `${directory}/${key}.json`;
-        const file = path.normalize(name);
+  fs.mkdirSync(directory);
 
-        fs.open(file, 'w', (err) => {
-            
-            if(err) {
-                throw err;
-            }
+  Object.keys(items).forEach(key => {
+    const item = items[key];
+    const jason = transform(item);
+    const json = JSON.stringify(jason);
 
-            fs.writeFile(file, json, (err) => {
-                if(err) {
-                    return console.error(err);
-                }
+    const name = `${directory}/${key}.json`;
+    const file = path.normalize(name);
 
-                console.log(`Created File ${colors.green(file)}`);
-            });
-        });
+    fs.open(file, "w", err => {
+      if (err) {
+        throw err;
+      }
+
+      fs.writeFile(file, json, er => {
+        if (er) {
+          return console.error(er);
+        }
+        console.log(`Created File ${colors.green(file)}`);
+        return file;
+      });
     });
+  });
 };
 
 export default build;

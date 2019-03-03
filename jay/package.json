@@ -6,6 +6,8 @@
     "author": "Jasonelle Team",
     "license": "MPL 2.0",
     "dependencies": {
+        "colors": "^1.3.3",
+        "fs-extra": "^7.0.1"
     },
     "repository": {
         "type": "git",
