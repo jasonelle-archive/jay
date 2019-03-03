@@ -1,16 +1,16 @@
 {
-    "name": "jasonelle-jay",
-    "version": "1.0.0",
-    "description": "Transpile JSX to Jasonette JSON",
-    "main": "index.js",
-    "author": "Jasonelle Team",
-    "license": "MPL 2.0",
-    "dependencies": {
-        "colors": "^1.3.3",
-        "fs-extra": "^7.0.1"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/jasonelle/jay.git"
-    }
+  "name": "jasonelle-jay",
+  "version": "1.0.0",
+  "description": "Transpile JSX to Jasonette JSON",
+  "main": "index.js",
+  "author": "Jasonelle Team",
+  "license": "MPL 2.0",
+  "dependencies": {
+    "colors": "^1.3.3",
+    "fs-extra": "^7.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jasonelle/jay.git"
+  }
 }

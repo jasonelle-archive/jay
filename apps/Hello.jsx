@@ -4,10 +4,11 @@ const myStyle = 'my_style';
 
 const Hello = () => (
   <Jason>
-    <Head title='My App' description='Hello' icon='file://icon.png'>
+    <Head title="My App" description="Hello" icon="file://icon.png">
       <Styles>
-        <Style className={myStyle} font='Verdana' />
+        <Style className={myStyle} font="Verdana" />
       </Styles>
+      <a />
     </Head>
   </Jason>
 );

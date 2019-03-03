@@ -17,6 +17,7 @@ module.exports = {
   },
   plugins: ['react', 'prettier'],
   rules: {
+    curly: 'error',
     'react/jsx-filename-extension': [
       1,
       {
@@ -28,7 +29,8 @@ module.exports = {
     'no-underscore-dangle': 'off',
     'import/imports-first': ['error', 'absolute-first'],
     'react/react-in-jsx-scope': 'off',
-    curly: 'error',
-    quotes: ['error', 'double']
+    'react/prop-types': 'off',
+    'prettier/prettier': 'error',
+    'no-unused-vars': 'warn'
   }
 };

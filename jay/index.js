@@ -1,4 +1,4 @@
-import Build from "./build";
+import Build from './build';
 
 export { Build };
 

@@ -5,7 +5,7 @@ const h = (element, props, ...children) => {
   let obj = { name: element, ...props };
 
   // invoke any functions, passing the object through them
-  if (typeof element === "function") obj = element(obj);
+  if (typeof element === 'function') obj = element(obj);
 
   [].concat(...children).forEach(child => {
     // if the child is an object with a name property,
@@ -24,7 +24,7 @@ const h = (element, props, ...children) => {
 
 const parseTree = item => {
   const element = {
-    name: "",
+    name: '',
     children: [],
     props: {}
   };
@@ -32,18 +32,18 @@ const parseTree = item => {
   Object.keys(item).forEach(key => {
     const value = item[key];
 
-    if (key === "type") {
+    if (key === 'type') {
       element.name = value;
-      if (value === "jason") {
-        element.name = "$jason";
+      if (value === 'jason') {
+        element.name = '$jason';
       }
     }
 
-    if (key === "children") {
+    if (key === 'children') {
       element.children = value;
     }
 
-    if (key === "props" || key === "attrs") {
+    if (key === 'props' || key === 'attrs') {
       element.props = value;
     }
   });
@@ -57,7 +57,7 @@ const parseTree = item => {
 
 const transform = leafs => {
   const tree = {
-    type: "root",
+    type: 'root',
     children: [leafs]
   };
 

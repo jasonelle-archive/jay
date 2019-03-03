@@ -1,14 +1,14 @@
 /* eslint-disable no-console */
-import fs from "fs-extra";
-import path from "path";
-import colors from "colors";
-import transform from "./transform";
+import fs from 'fs-extra';
+import path from 'path';
+import colors from 'colors';
+import transform from './transform';
 
 const build = (items, dir = null) => {
   let directory = dir;
 
   if (!directory) {
-    directory = path.normalize("./dist");
+    directory = path.normalize('./dist');
   }
 
   if (fs.existsSync(directory)) {
@@ -25,7 +25,7 @@ const build = (items, dir = null) => {
     const name = `${directory}/${key}.json`;
     const file = path.normalize(name);
 
-    fs.open(file, "w", err => {
+    fs.open(file, 'w', err => {
       if (err) {
         throw err;
       }

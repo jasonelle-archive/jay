@@ -1,1 +1,1 @@
-{"$jason":{"name":"$jason","head":{"name":"head","icon":"file://icon.png","description":"Hello","title":"My App","styles":{"name":"styles","my_style":{"name":"my_style","font":"Verdana"}}}}}
+{"$jason":{"name":"$jason","head":{"name":"head","icon":"file://icon.png","description":"Hello","title":"My App","styles":{"name":"styles","my_style":{"name":"my_style","font":"Verdana"}},"a":{"name":"a"}}}}

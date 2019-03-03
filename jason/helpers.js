@@ -11,7 +11,7 @@ const getChildName = child => {
     return child.toString().toLowerCase();
   }
 
-  return "";
+  return '';
 };
 
 const helpers = {
