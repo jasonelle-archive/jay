@@ -7,7 +7,7 @@
     "lint": "lint-staged"
   },
   "lint-staged": {
-    "**/*.{js,jsx}": [
+    "apps/**/*.{js,jsx}": [
       "npm run pretty",
       "git add"
     ]

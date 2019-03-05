@@ -1,3 +1,6 @@
+/* eslint-disable react/jsx-pascal-case */
+/* eslint-disable no-unused-vars */
+
 import { h } from 'preact';
 import validations from './validations';
 
@@ -90,8 +93,8 @@ const Style = ({
 
     // The $ is needed in order to force JSX to interpret the variable
     // Otherwise JSX consider the tag as markup.
-    const $element = className;
-    return <$element {...props} />;
+    const $Element = className;
+    return <$Element {...props} />;
   }
 
   return <style {...props} />;

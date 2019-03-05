@@ -1,11 +1,13 @@
-// Transform Generated JSON to Jasonette JSON
+/* eslint-disable no-param-reassign */
 
 const h = (element, props, ...children) => {
   // function from https://github.com/developit/jsxobj
   let obj = { name: element, ...props };
 
   // invoke any functions, passing the object through them
-  if (typeof element === 'function') obj = element(obj);
+  if (typeof element === 'function') {
+    obj = element(obj);
+  }
 
   [].concat(...children).forEach(child => {
     // if the child is an object with a name property,
@@ -13,7 +15,9 @@ const h = (element, props, ...children) => {
     const { name } = child;
     if (name) {
       obj[name] = child;
-      // delete child.name;
+
+      // delete the child name in order to merge the values
+      delete child.name;
     } else {
       obj.value = child;
     }
@@ -34,16 +38,13 @@ const parseTree = item => {
 
     if (key === 'type') {
       element.name = value;
-      if (value === 'jason') {
-        element.name = '$jason';
-      }
     }
 
     if (key === 'children') {
       element.children = value;
     }
 
-    if (key === 'props' || key === 'attrs') {
+    if (key === 'props' || key === 'attrs' || key === 'attributes') {
       element.props = value;
     }
   });
