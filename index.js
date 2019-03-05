@@ -11,8 +11,8 @@ import Hello from './apps/Hello';
 // 'file' : jsx object
 
 const apps = {
-    'index' : Main,
-    'hello' : Hello
+  index: Main,
+  hello: Hello
 };
 
 Jay(apps);

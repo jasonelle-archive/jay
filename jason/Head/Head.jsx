@@ -3,8 +3,9 @@
 import { h } from 'preact';
 import validations from '../validations';
 
+const context = '$jason.head';
+
 const Head = ({ title, description, icon, offline, children }) => {
-  const context = '$jason.head';
   let props = {};
   let value = null;
 

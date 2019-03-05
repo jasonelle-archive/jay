@@ -17,8 +17,8 @@ const childsAreValid = (children, validChildren, context = '') => {
   });
 
   names.forEach(name => {
-    if (!validChildren.includes(name)) {
-      throwError(`"${name}" is not a valid child.`, context);
+    if (!validChildren.includes(name.toString())) {
+      throwError(`"${JSON.stringify(name)}" is not a valid child.`, context);
     }
   });
 };
@@ -48,6 +48,13 @@ const stringIsUrl = (string, context = '') => {
   }
 };
 
+const notAtTheSameTimeError = (values, context = '') => {
+  throwError(
+    `${JSON.stringify(values)} should not be present at the same time.`,
+    context
+  );
+};
+
 const validations = {
   string: {
     not: {
@@ -64,6 +71,15 @@ const validations = {
   },
   array: {
     contains: arrayContains
+  },
+  errors: {
+    not: {
+      at: {
+        same: {
+          time: notAtTheSameTimeError
+        }
+      }
+    }
   }
 };
 

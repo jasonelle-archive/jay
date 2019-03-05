@@ -1,6 +1,16 @@
-import { render, Jason, Head, Styles, Style } from 'jason';
+import {
+  render,
+  Jason,
+  Head,
+  Styles,
+  Style,
+  Actions,
+  Action,
+  Options
+} from 'jason';
 
-const myStyle = 'my_style';
+const myStyle = 'verdanaFont';
+const helloAction = 'sayHello';
 
 const Hello = () => (
   <Jason>
@@ -8,10 +18,13 @@ const Hello = () => (
       <Styles>
         <Style className={myStyle} font="Verdana" />
       </Styles>
+      <Actions>
+        <Action className={helloAction} type="$util.banner">
+          <Options title="Hello" description="World" />
+        </Action>
+      </Actions>
     </Head>
   </Jason>
 );
 
-// It's important to return the rendered component
-// in order to transform the result to json
 export default render(<Hello />);

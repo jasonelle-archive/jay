@@ -4,9 +4,9 @@ import render from 'preact-render-to-json';
 import colors from 'colors';
 
 import Jason from './Jason';
-import Style from './Style';
 
-import { Head, Styles } from './Head';
+import { Head, Styles, Actions } from './Head';
+import { Action, Style, Options } from './Common';
 
 const renderJay = params => {
   try {
@@ -17,6 +17,16 @@ const renderJay = params => {
   }
 };
 
-export { h, renderJay as render, Jason, Head, Styles, Style };
+export {
+  h,
+  renderJay as render,
+  Jason,
+  Head,
+  Styles,
+  Style,
+  Actions,
+  Action,
+  Options
+};
 
 export default Jason;

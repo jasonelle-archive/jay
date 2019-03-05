@@ -4,8 +4,8 @@ import { h } from 'preact';
 
 import validations from './validations';
 
-// This is needed in order to render properly
-// the $jason root node.
+// The $ is needed in order to force JSX to interpret the variable
+// Otherwise JSX consider the tag as markup.
 const $Jason = '$jason';
 
 const Jason = ({ children }) => {
