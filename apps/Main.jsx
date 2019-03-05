@@ -1,6 +1,4 @@
-import { h, render, Jason } from 'jason';
+import { render, Jason } from 'jason';
 
-const Main = () => <Jason />;
-
-const output = render(<Main />);
-export default output;
+// This is the bare minimum needed in order to render an app
+export default render(<Jason />);

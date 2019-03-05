@@ -1,4 +1,4 @@
-import { h, render, Jason, Head, Styles, Style } from 'jason';
+import { render, Jason, Head, Styles, Style } from 'jason';
 
 const myStyle = 'my_style';
 
@@ -14,5 +14,4 @@ const Hello = () => (
 
 // It's important to return the rendered component
 // in order to transform the result to json
-const output = render(<Hello />);
-export default output;
+export default render(<Hello />);

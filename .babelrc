@@ -1,9 +1,15 @@
 {
-    "presets": [
-        ["@babel/env", {"loose":true}]
-    ],
-    "plugins": [
-        ["@babel/plugin-proposal-function-bind"],
-        ["@babel/transform-react-jsx", { "pragma": "h" }]
+  "presets": [["@babel/env", { "loose": true }]],
+  "plugins": [
+    ["@babel/plugin-proposal-function-bind"],
+    ["@babel/transform-react-jsx", { "pragma": "h" }],
+    [
+      "babel-plugin-jsx-pragmatic",
+      {
+        "module": "preact",
+        "import": "h",
+        "export": "h"
+      }
     ]
+  ]
 }
