@@ -6,7 +6,9 @@ import {
   Style,
   Actions,
   Action,
-  Options
+  Options,
+  Success,
+  Error
 } from 'jason';
 
 const myStyle = 'verdanaFont';
@@ -21,6 +23,12 @@ const Hello = () => (
       <Actions>
         <Action className={helloAction} type="$util.banner">
           <Options title="Hello" description="World" />
+          <Success type="$util.banner">
+            <Options title="Another" description="Message" />
+          </Success>
+          <Error type="$util.banner">
+            <Options title="Something bad" description="May happened" />
+          </Error>
         </Action>
       </Actions>
     </Head>

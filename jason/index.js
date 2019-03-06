@@ -6,7 +6,7 @@ import colors from 'colors';
 import Jason from './Jason';
 
 import { Head, Styles, Actions } from './Head';
-import { Action, Style, Options } from './Common';
+import { Action, Style, Options, Success, Error } from './Common';
 
 const renderJay = params => {
   try {
@@ -26,7 +26,9 @@ export {
   Style,
   Actions,
   Action,
-  Options
+  Options,
+  Success,
+  Error
 };
 
 export default Jason;
