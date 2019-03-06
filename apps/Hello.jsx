@@ -1,15 +1,8 @@
-import {
-  render,
-  Jason,
-  Head,
-  Styles,
-  Style,
-  Actions,
-  Action,
-  Options,
-  Success,
-  Error
-} from 'jason';
+import * as Jay from 'jason';
+
+const { render, Jason } = Jay;
+const { Head, Styles, Actions } = Jay.Head;
+const { Style, Action, Options } = Jay.Common;
 
 const myStyle = 'verdanaFont';
 const helloAction = 'sayHello';
@@ -23,12 +16,12 @@ const Hello = () => (
       <Actions>
         <Action className={helloAction} type="$util.banner">
           <Options title="Hello" description="World" />
-          <Success type="$util.banner">
+          <Action.Success type="$util.banner">
             <Options title="Another" description="Message" />
-          </Success>
-          <Error type="$util.banner">
+          </Action.Success>
+          <Action.Error type="$util.banner">
             <Options title="Something bad" description="May happened" />
-          </Error>
+          </Action.Error>
         </Action>
       </Actions>
     </Head>

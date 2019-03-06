@@ -1,34 +1,23 @@
 /* eslint-disable no-console */
 import { h } from 'preact';
-import render from 'preact-render-to-json';
+import renderPreact from 'preact-render-to-json';
 import colors from 'colors';
 
 import Jason from './Jason';
+import * as Head from './Head';
+import * as Common from './Common';
 
-import { Head, Styles, Actions } from './Head';
-import { Action, Style, Options, Success, Error } from './Common';
-
-const renderJay = params => {
+const render = params => {
   try {
-    return render(params);
+    return renderPreact(params);
   } catch (error) {
     console.trace(colors.red(error));
     throw error;
   }
 };
 
-export {
-  h,
-  renderJay as render,
-  Jason,
-  Head,
-  Styles,
-  Style,
-  Actions,
-  Action,
-  Options,
-  Success,
-  Error
-};
-
-export default Jason;
+export { Jason };
+export { Head };
+export { Common };
+export { render };
+export { h };
