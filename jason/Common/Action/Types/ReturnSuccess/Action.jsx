@@ -1,10 +1,9 @@
 import type from './type';
 import Action from '../../Action';
 
-const ActionTypeReturnSuccess = ({ className, children }) => (
-  <Action className={className} type={type}>
-    {children}
-  </Action>
+// No children allowed in this action type
+const ActionTypeReturnSuccess = ({ className }) => (
+  <Action className={className} type={type} />
 );
 
 export default ActionTypeReturnSuccess;
