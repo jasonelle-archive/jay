@@ -1,8 +1,8 @@
-import * as Jay from 'jason';
+import * as JasonComponents from 'jason';
 
-const { render, Jason } = Jay;
-const { Head, Styles, Actions } = Jay.Head;
-const { Style, Action, Options } = Jay.Common;
+const { render, Jason } = JasonComponents;
+const { Head, Styles, Actions } = JasonComponents.Head;
+const { Style, Action, Options } = JasonComponents.Common;
 
 const myStyle = 'verdanaFont';
 const helloAction = 'sayHello';
