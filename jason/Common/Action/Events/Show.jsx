@@ -1,4 +1,4 @@
-import Action from '../Action/Action';
+import Action from '../Action';
 
 const name = '$show';
 const Show = ({ type, children }) => (
