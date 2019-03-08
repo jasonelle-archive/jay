@@ -55,6 +55,10 @@ const notAtTheSameTimeError = (values, context = '') => {
   );
 };
 
+const valueIsRequiredError = (value, context = '') => {
+  throwError(`${JSON.stringify(value)} is required.`, context);
+};
+
 const validations = {
   string: {
     not: {
@@ -73,6 +77,7 @@ const validations = {
     contains: arrayContains
   },
   errors: {
+    required: valueIsRequiredError,
     not: {
       at: {
         same: {
