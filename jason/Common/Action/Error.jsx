@@ -6,7 +6,7 @@ import validations from '../../validations';
 
 const context = 'action.error';
 
-const Error = ({ type, trigger, children }) => {
+const JasonError = ({ type, trigger, children }) => {
   if (type && trigger) {
     validations.errors.not.at.same.time(['type', 'trigger'], context);
   }
@@ -34,4 +34,4 @@ const Error = ({ type, trigger, children }) => {
   return <error {...props}>{children}</error>;
 };
 
-export default Error;
+export default JasonError;
