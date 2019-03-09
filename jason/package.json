@@ -1,10 +1,13 @@
 {
-  "name": "jasonelle-jason-jsx",
+  "name": "jasonelle-jay-jason-jsx-components",
   "version": "1.0.0",
   "description": "Jasonette JSON Components for JSX",
   "main": "index.js",
   "author": "Jasonelle Team",
   "license": "MPL 2.0",
+  "scripts": {
+    "test": ""
+  },
   "dependencies": {
     "preact": "^8.4.2",
     "preact-render-to-json": "^3.6.6",

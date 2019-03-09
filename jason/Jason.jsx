@@ -1,6 +1,7 @@
+/** @jsx preact.h */
 /* eslint-disable react/jsx-pascal-case */
 /* eslint-disable no-unused-vars */
-import { h } from 'preact';
+import preact from 'preact';
 
 import validations from './validations';
 

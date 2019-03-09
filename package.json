@@ -5,7 +5,8 @@
     "clean": "rm -rf node_modules && yarn install",
     "lint:apps": "find ./apps -iname '*.js' -o -iname '*.jsx' | xargs eslint --fix",
     "lint:jason": "find ./jason -iname '*.js' -o -iname '*.jsx' | xargs eslint --fix",
-    "lint:jay": "find ./jay -iname '*.js' -o -iname '*.jsx' | xargs eslint --fix"
+    "lint:jay": "find ./jay -iname '*.js' -o -iname '*.jsx' | xargs eslint --fix",
+    "test": "webpack test/index.js --config ./webpack.config.test.js && mocha --recursive  ./build/test.bundle.js"
   },
   "lint-staged": {
     "**/*.{js,jsx}": [
@@ -31,7 +32,10 @@
     "webpack-cli": "^3.2.3"
   },
   "devDependencies": {
+    "@babel/parser": "^7.3.4",
+    "@babel/register": "^7.0.0",
     "babel-eslint": "^10.0.1",
+    "chai": "^4.2.0",
     "eslint": "^5.15.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^4.1.0",
@@ -41,6 +45,7 @@
     "eslint-plugin-react": "^7.12.4",
     "husky": "^1.3.1",
     "lint-staged": "^8.1.5",
+    "mocha": "^6.0.2",
     "prettier": "^1.16.4"
   },
   "husky": {
