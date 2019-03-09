@@ -1,18 +1,22 @@
 {
-    "name": "jasonelle-jason-jsx",
-    "version": "1.0.0",
-    "description": "Jasonette JSON Components for JSX",
-    "main": "index.js",
-    "author": "Jasonelle Team",
-    "license": "MPL 2.0",
-    "dependencies": {
-        "preact": "^8.4.2",
-        "preact-render-to-json": "^3.6.6",
-        "v8n": "^1.2.3",
-        "colors": "^1.3.3"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/jasonelle/jay.git"
-    }
+  "name": "jasonelle-jason-jsx",
+  "version": "1.0.0",
+  "description": "Jasonette JSON Components for JSX",
+  "main": "index.js",
+  "author": "Jasonelle Team",
+  "license": "MPL 2.0",
+  "dependencies": {
+    "preact": "^8.4.2",
+    "preact-render-to-json": "^3.6.6",
+    "v8n": "^1.2.3",
+    "colors": "^1.3.3"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "preact-jsx-chai": "^2.2.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jasonelle/jay.git"
+  }
 }

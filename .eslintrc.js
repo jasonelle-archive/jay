@@ -1,15 +1,20 @@
 module.exports = {
   env: {
     es6: true,
-    node: true
+    node: true,
+    mocha: true
   },
   extends: ['airbnb', 'plugin:prettier/recommended'],
   globals: {
     Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly'
+    SharedArrayBuffer: 'readonly',
+    expect: true,
+    chai: true
   },
+  parser: 'babel-eslint',
   parserOptions: {
     ecmaFeatures: {
+      modules: true,
       jsx: true
     },
     ecmaVersion: 2018,
