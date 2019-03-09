@@ -10,6 +10,17 @@ const throwError = (message, context = '') => {
   throw err;
 };
 
+const notAtTheSameTimeError = (values, context = '') => {
+  throwError(
+    `${JSON.stringify(values)} should not be present at the same time.`,
+    context
+  );
+};
+
+const valueIsRequiredError = (value, context = '') => {
+  throwError(`${JSON.stringify(value)} is required.`, context);
+};
+
 const childsAreValid = (children, validChildren, context = '') => {
   const names = [];
   children.forEach(child => {
@@ -23,10 +34,32 @@ const childsAreValid = (children, validChildren, context = '') => {
   });
 };
 
+const childIsRequired = (children, required, context = '') => {
+  const names = [];
+  children.forEach(child => {
+    names.push(helpers.get.child.name(child));
+  });
+
+  names.forEach(name => {
+    if (!required.includes(name)) {
+      throwError(`"${JSON.stringify(name)}" is required.`, context);
+    }
+  });
+};
+
 const arrayContains = (value, items, context = '') => {
   if (!items.includes(value)) {
     throwError(`"${value}" not in ${JSON.stringify(items)}`, context);
   }
+};
+
+const arrayContainsRequiredValues = (values, context = '') => {
+  Object.keys(values).forEach(key => {
+    const item = values[key];
+    if (!item) {
+      valueIsRequiredError(key, context);
+    }
+  });
 };
 
 const stringIsNotEmpty = (string, context = '') => {
@@ -48,17 +81,6 @@ const stringIsUrl = (string, context = '') => {
   }
 };
 
-const notAtTheSameTimeError = (values, context = '') => {
-  throwError(
-    `${JSON.stringify(values)} should not be present at the same time.`,
-    context
-  );
-};
-
-const valueIsRequiredError = (value, context = '') => {
-  throwError(`${JSON.stringify(value)} is required.`, context);
-};
-
 const validations = {
   string: {
     not: {
@@ -71,10 +93,12 @@ const validations = {
   children: {
     are: {
       valid: childsAreValid
-    }
+    },
+    required: childIsRequired
   },
   array: {
-    contains: arrayContains
+    contains: arrayContains,
+    required: arrayContainsRequiredValues
   },
   errors: {
     required: valueIsRequiredError,

@@ -4,7 +4,8 @@
     "prettyjay": "eslint jason/ --fix && eslint jay/ --fix",
     "build": "node ./node_modules/webpack-cli/bin/cli.js --mode development",
     "jay": "npm run build && node ./build/app.bundle.js",
-    "lint": "lint-staged"
+    "lint": "lint-staged",
+    "test": "jest"
   },
   "lint-staged": {
     "apps/**/*.{js,jsx}": [
