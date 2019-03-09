@@ -15,7 +15,7 @@ describe('Jason Component', () => {
     );
   });
 
-  it('head, body should be a valid children', () => {
+  it('should head, body be a valid children', () => {
     expect(() =>
       render(
         <Jason>
