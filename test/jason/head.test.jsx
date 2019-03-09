@@ -14,4 +14,18 @@ describe('Head Component', () => {
       'Validation Error'
     );
   });
+
+  it('styles, actions, templates, data, agents should be valid children', () => {
+    expect(() =>
+      render(
+        <Head>
+          <styles />
+          <actions />
+          <templates />
+          <data />
+          <agents />
+        </Head>
+      )
+    ).to.not.throw('Validation Error');
+  });
 });

@@ -15,27 +15,14 @@ describe('Jason Component', () => {
     );
   });
 
-  it('head should be a valid children', () => {
-    const tree = render(
-      <Jason>
-        <head />
-      </Jason>
-    );
-
-    expect(tree).to.have.property('children');
-    const child = tree.children[0];
-    expect(child.type).to.be.eq('head');
-  });
-
-  it('body should be a valid children', () => {
-    const tree = render(
-      <Jason>
-        <body />
-      </Jason>
-    );
-
-    expect(tree).to.have.property('children');
-    const child = tree.children[0];
-    expect(child.type).to.be.eq('body');
+  it('head, body should be a valid children', () => {
+    expect(() =>
+      render(
+        <Jason>
+          <head />
+          <body />
+        </Jason>
+      )
+    ).to.not.throw('Validation Error');
   });
 });
