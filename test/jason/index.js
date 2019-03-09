@@ -1,5 +1,5 @@
-import Jason from './jason.test';
-import Head from './head.test';
+import Jason from './Jason.test';
+import * as Head from './Head';
 
 export { Jason };
 export { Head };
