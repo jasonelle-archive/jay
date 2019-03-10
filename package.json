@@ -6,7 +6,7 @@
     "lint:apps": "find ./apps -iname '*.js' -o -iname '*.jsx' | xargs eslint --fix",
     "lint:jason": "find ./jason -iname '*.js' -o -iname '*.jsx' | xargs eslint --fix",
     "lint:jay": "find ./jay -iname '*.js' -o -iname '*.jsx' | xargs eslint --fix",
-    "test": "webpack test/index.js --config ./webpack.config.test.js && mocha --recursive  ./build/test.bundle.js"
+    "test": "webpack test/index.js --config ./webpack.config.test.js && mocha --recursive  ./build/test.bundle.js --reporter nyan"
   },
   "lint-staged": {
     "**/*.{js,jsx}": [
