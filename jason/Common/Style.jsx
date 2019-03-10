@@ -20,10 +20,15 @@ const Style = ({
   width,
   height,
   top,
-  left
+  left,
+  children
 }) => {
   let props = {};
   let value = null;
+
+  if (children && children.length > 0) {
+    validations.children.not.allowed(context);
+  }
 
   if (font) {
     value = font.toString().trim();

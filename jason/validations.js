@@ -81,6 +81,10 @@ const stringIsUrl = (string, context = '') => {
   }
 };
 
+const childrenAreNotAllowed = (context = '') => {
+  throwError(`This component does not support to have children`, context);
+};
+
 const validations = {
   string: {
     not: {
@@ -94,7 +98,10 @@ const validations = {
     are: {
       valid: childsAreValid
     },
-    required: childIsRequired
+    required: childIsRequired,
+    not: {
+      allowed: childrenAreNotAllowed
+    }
   },
   array: {
     contains: arrayContains,
