@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "bundle": "node ./node_modules/.bin/browserify jay.js > dist/bundle.js"
+  },
+  "devDependencies": {
+    "browserify": "^16.5.0",
+    "mocha": "^7.0.1"
+  },
+  "dependencies": {
+    "@hapi/joi": "^17.1.0",
+    "he": "^1.2.0",
+    "lodash": "^4.17.15",
+    "moment-timezone": "^0.5.27"
+  }
+}
