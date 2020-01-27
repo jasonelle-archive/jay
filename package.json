@@ -25,8 +25,11 @@
     "fs-extra": "^7.0.1",
     "jason": "./jason",
     "jay": "./jay",
+    "js-yaml": "^3.13.1",
     "preact": "^8.4.2",
     "preact-render-to-json": "^3.6.6",
+    "serialize-javascript": "^2.1.1",
+    "set-value": "^2.0.1",
     "v8n": "^1.2.3",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.2.3"
