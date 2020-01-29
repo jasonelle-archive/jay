@@ -5,6 +5,13 @@ const mixin = require('../elements/core/mixin');
  * This is the main document that will hold all the information.
  */
 const document = () => ({
+  json: function() {
+    return JSON.stringify(this);
+  },
+  object: function() {
+    return JSON.parse(this.json());
+  },
+
   mixin: function(uri) {
     if (!this['@']) {
       this['@'] = '';
@@ -27,7 +34,7 @@ const document = () => ({
     return this;
   },
 
-  jason: function({ head, body }) {
+  jason: function({ head, body } = {}) {
     if (!this.$jason) {
       this.$jason = {};
     }
@@ -37,7 +44,7 @@ const document = () => ({
       body: joi.object().optional()
     });
 
-    const result = schema.validate({ head, body });
+    const result = schema.validate({ head: head || {}, body: body || {} });
     const { error } = result;
     const valid = error == null;
 
@@ -54,12 +61,6 @@ const document = () => ({
     }
 
     return this;
-  },
-  json: function() {
-    return JSON.stringify(this);
-  },
-  object: function() {
-    return JSON.parse(this.json());
   }
 });
 
