@@ -12,7 +12,8 @@ describe('document()', () => {
       const data = { valid: true };
       const app = document()
         .mixin('https://google.com')
-        .append(data);
+        .append(data)
+        .val();
 
       expect(app).to.be.an('object');
       expect(app.valid).to.exist;
@@ -50,7 +51,9 @@ describe('document()', () => {
   context('mixin', () => {
     it('should contain url', done => {
       const url = 'https://google.com';
-      const app = document().mixin(url);
+      const app = document()
+        .mixin(url)
+        .val();
 
       expect(app).to.be.an('object');
       expect(app['@']).to.exist;
@@ -120,7 +123,9 @@ describe('document()', () => {
 
   context('$jason', () => {
     it('should be an object', done => {
-      const app = document().jason();
+      const app = document()
+        .jason()
+        .val();
       expect(app).to.be.an('object');
       expect(app.$jason).to.exist;
       expect(app.$jason).to.be.an('object');
@@ -130,7 +135,9 @@ describe('document()', () => {
     });
 
     it('should contain head, but not body', done => {
-      const app = document().jason({ head: {} });
+      const app = document()
+        .jason({ head: {} })
+        .val();
       expect(app.$jason.head).to.exist;
       expect(app.$jason.body).to.not.exist;
       expect(app.$jason.head).to.be.an('object');
@@ -138,7 +145,9 @@ describe('document()', () => {
     });
 
     it('should contain body, but not head', done => {
-      const app = document().jason({ body: {} });
+      const app = document()
+        .jason({ body: {} })
+        .val();
       expect(app.$jason.head).to.not.exist;
       expect(app.$jason.body).to.exist;
       expect(app.$jason.body).to.be.an('object');

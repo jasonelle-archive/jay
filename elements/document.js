@@ -1,67 +1,73 @@
 const joi = require('@hapi/joi');
 const merge = require('lodash/merge');
 const mixin = require('../elements/core/mixin');
+const Base = require('./core/base');
+
 /**
  * This is the main document that will hold all the information.
  */
-const document = () => ({
-  json: function() {
-    return JSON.stringify(this);
-  },
-  object: function() {
-    return JSON.parse(this.json());
-  },
+const document = () => {
+  const instance = Base();
+  Object.assign(instance, {
+    mixin: function(uri) {
+      if (!this.__data['@']) {
+        this.__data['@'] = '';
+      }
+      this.__data['@'] = mixin(uri);
+      return this;
+    },
 
-  mixin: function(uri) {
-    if (!this['@']) {
-      this['@'] = '';
+    append: function(object) {
+      const schema = joi.object().required();
+      const result = schema.validate(object);
+      const { error } = result;
+      const valid = error == null;
+
+      if (!valid) {
+        throw new Error(error);
+      }
+
+      merge(this.__data, object);
+      return this;
+    },
+
+    jason: function({ head, body } = {}) {
+      if (!this.__data.$jason) {
+        this.__data.$jason = {};
+      }
+
+      const schema = joi.object().keys({
+        head: joi
+          .object()
+          .allow(null)
+          .optional(),
+        body: joi
+          .object()
+          .allow(null)
+          .optional()
+      });
+
+      const result = schema.validate({ head: head, body: body });
+      const { error } = result;
+      const valid = error == null;
+
+      if (!valid) {
+        throw new Error(error);
+      }
+
+      if (head) {
+        this.__data.$jason.head = head;
+      }
+
+      if (body) {
+        this.__data.$jason.body = body;
+      }
+
+      return this;
     }
-    this['@'] = mixin(uri);
-    return this;
-  },
+  });
 
-  append: function(object) {
-    const schema = joi.object().required();
-    const result = schema.validate(object);
-    const { error } = result;
-    const valid = error == null;
-
-    if (!valid) {
-      throw new Error(error);
-    }
-
-    merge(this, object);
-    return this;
-  },
-
-  jason: function({ head, body } = {}) {
-    if (!this.$jason) {
-      this.$jason = {};
-    }
-
-    const schema = joi.object().keys({
-      head: joi.object().optional(),
-      body: joi.object().optional()
-    });
-
-    const result = schema.validate({ head: head || {}, body: body || {} });
-    const { error } = result;
-    const valid = error == null;
-
-    if (!valid) {
-      throw new Error(error);
-    }
-
-    if (head) {
-      this.$jason.head = head;
-    }
-
-    if (body) {
-      this.$jason.body = body;
-    }
-
-    return this;
-  }
-});
+  return instance;
+};
 
 module.exports = document;
