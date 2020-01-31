@@ -1,8 +1,16 @@
 const merge = require('lodash/merge');
 const joi = require('@hapi/joi');
+const mixin = require('./mixin');
 
 const Base = () => ({
   __data: {},
+  mixin: function(uri) {
+    if (!this.__data['@']) {
+      this.__data['@'] = '';
+    }
+    this.__data['@'] = mixin(uri);
+    return this;
+  },
   value: function() {
     return this.__data || this;
   },

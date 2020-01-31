@@ -8,14 +8,6 @@ const Base = require('./core/base');
 const document = () => {
   const instance = Base();
   Object.assign(instance, {
-    mixin: function(uri) {
-      if (!this.__data['@']) {
-        this.__data['@'] = '';
-      }
-      this.__data['@'] = mixin(uri);
-      return this;
-    },
-
     jason: function({ head, body } = {}) {
       if (!this.__data.$jason) {
         this.__data.$jason = {};
