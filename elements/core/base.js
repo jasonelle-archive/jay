@@ -1,3 +1,6 @@
+const merge = require('lodash/merge');
+const joi = require('@hapi/joi');
+
 const Base = () => ({
   __data: {},
   value: function() {
@@ -11,6 +14,19 @@ const Base = () => ({
   },
   val: function() {
     return this.value();
+  },
+  append: function(object) {
+    const schema = joi.object().required();
+    const result = schema.validate(object);
+    const { error } = result;
+    const valid = error == null;
+
+    if (!valid) {
+      throw new Error(error);
+    }
+
+    merge(this.__data, object);
+    return this;
   }
 });
 

@@ -1,5 +1,5 @@
 const expect = require('chai').expect;
-const head = require('../elements/head/head');
+const head = require('../elements/head');
 
 describe('head()', () => {
   it('should be an object', done => {
@@ -166,6 +166,108 @@ describe('head()', () => {
       expect(value.description).to.eq(description);
       expect(value.offline).to.exist;
 
+      done();
+    });
+  });
+
+  context('actions', () => {
+    it('should have actions property', done => {
+      const out = head()
+        .actions()
+        .val();
+      expect(out.actions).to.exist;
+      expect(out.actions).to.be.an('object');
+      done();
+    });
+
+    it('should merge with params', done => {
+      const out = head()
+        .actions({ my_custom_action: { type: '$ok' } })
+        .val();
+      expect(out.actions.my_custom_action).to.exist;
+      expect(out.actions.my_custom_action).to.be.an('object');
+      expect(out.actions.my_custom_action.type).to.be.eq('$ok');
+      done();
+    });
+  });
+
+  context('styles', () => {
+    it('should have styles property', done => {
+      const out = head()
+        .styles()
+        .val();
+      expect(out.styles).to.exist;
+      expect(out.styles).to.be.an('object');
+      done();
+    });
+
+    it('should merge with params', done => {
+      const out = head()
+        .styles({ my_custom_style: { size: 15 } })
+        .val();
+      expect(out.styles.my_custom_style).to.exist;
+      expect(out.styles.my_custom_style).to.be.an('object');
+      expect(out.styles.my_custom_style.size).to.be.eq(15);
+      done();
+    });
+  });
+
+  context('templates', () => {
+    it('should have templates property', done => {
+      const out = head()
+        .templates()
+        .val();
+      expect(out.templates).to.exist;
+      expect(out.templates).to.be.an('object');
+      done();
+    });
+
+    it('should merge with params', done => {
+      const out = head()
+        .templates({ body: {} })
+        .val();
+      expect(out.templates.body).to.exist;
+      expect(out.templates.body).to.be.an('object');
+      done();
+    });
+  });
+
+  context('agents', () => {
+    it('should have agents property', done => {
+      const out = head()
+        .agents()
+        .val();
+      expect(out.agents).to.exist;
+      expect(out.agents).to.be.an('object');
+      done();
+    });
+
+    it('should merge with params', done => {
+      const out = head()
+        .agents({ myagent: {} })
+        .val();
+      expect(out.agents.myagent).to.exist;
+      expect(out.agents.myagent).to.be.an('object');
+      done();
+    });
+  });
+
+  context('data', () => {
+    it('should have data property', done => {
+      const out = head()
+        .data()
+        .val();
+      expect(out.data).to.exist;
+      expect(out.data).to.be.an('object');
+      done();
+    });
+
+    it('should merge with params', done => {
+      const out = head()
+        .data({ myvar: {} })
+        .val();
+      expect(out.data.myvar).to.exist;
+      expect(out.data.myvar).to.be.an('object');
       done();
     });
   });

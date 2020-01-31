@@ -1,5 +1,4 @@
 const joi = require('@hapi/joi');
-const merge = require('lodash/merge');
 const mixin = require('../elements/core/mixin');
 const Base = require('./core/base');
 
@@ -14,20 +13,6 @@ const document = () => {
         this.__data['@'] = '';
       }
       this.__data['@'] = mixin(uri);
-      return this;
-    },
-
-    append: function(object) {
-      const schema = joi.object().required();
-      const result = schema.validate(object);
-      const { error } = result;
-      const valid = error == null;
-
-      if (!valid) {
-        throw new Error(error);
-      }
-
-      merge(this.__data, object);
       return this;
     },
 
