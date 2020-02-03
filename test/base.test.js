@@ -39,6 +39,33 @@ describe('base()', () => {
     });
   });
 
+  context('value', () => {
+    it('should return data', done => {
+      expect(JSON.stringify(Base().value())).to.be.eq(
+        JSON.stringify(Base().__data)
+      );
+      done();
+    });
+  });
+
+  context('val', () => {
+    it('should return value', done => {
+      expect(JSON.stringify(Base().val())).to.be.eq(
+        JSON.stringify(Base().value())
+      );
+      done();
+    });
+  });
+
+  context('render', () => {
+    it('should return value', done => {
+      expect(JSON.stringify(Base().render())).to.be.eq(
+        JSON.stringify(Base().value())
+      );
+      done();
+    });
+  });
+
   context('object', () => {
     it('should generate valid object', done => {
       expect(() => {

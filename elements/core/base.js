@@ -23,6 +23,9 @@ const Base = () => ({
   val: function() {
     return this.value();
   },
+  render: function() {
+    return this.value();
+  },
   append: function(object) {
     const schema = joi.object().required();
     const result = schema.validate(object);
